@@ -1,0 +1,1 @@
+E:\BYUI\CSE310\Rust\rust-proyect\log_analyzer\target\debug\log_analyzer.exe: E:\BYUI\CSE310\Rust\rust-proyect\log_analyzer\src\cli.rs E:\BYUI\CSE310\Rust\rust-proyect\log_analyzer\src\main.rs E:\BYUI\CSE310\Rust\rust-proyect\log_analyzer\src\model.rs E:\BYUI\CSE310\Rust\rust-proyect\log_analyzer\src\parser.rs

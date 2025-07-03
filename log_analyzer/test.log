@@ -1,0 +1,7 @@
+
+INFO: Application started successfully.
+DEBUG: Connecting to database on port 5432.
+WARNING: Configuration value 'timeout' is deprecated.
+This is just a standard log line with no specific level.
+ERROR: Failed to connect to remote server.
+CRITICAL: System shutting down due to a fatal error!
