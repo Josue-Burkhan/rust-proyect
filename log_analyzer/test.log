@@ -1,7 +1,533 @@
+[25-07-04 20:04:02.795] SquashTM - 7  WARN [main] [] --- org.springframework.boot.autoconfigure.thymeleaf.ThymeleafAutoConfiguration$DefaultTemplateResolverConfiguration: Cannot fi
+nd template location: /WEB-INF/templates/ (please add some templates, check your Thymeleaf configuration, or set spring.thymeleaf.check-template-location=false)
+[25-07-04 20:04:02.821] SquashTM - 7  INFO [main] [] --- org.springframework.boot.actuate.endpoint.web.EndpointLinksResolver: Exposing 0 endpoint(s) beneath base path '/actuator'  
+[25-07-04 20:04:02.990] SquashTM - 7  INFO [main] [] --- org.springframework.boot.web.embedded.tomcat.TomcatWebServer: Tomcat started on port(s): 8080 (http) with context path '/sq
+uash'
+[25-07-04 20:04:02.993] SquashTM - 7  INFO [main] [] --- org.squashtest.tm.web.backend.listener.SquashConfigContextExposer: Read global configuration param 'feature.milestone.enabl
+ed' with param 'false'
+[25-07-04 20:04:03.017] SquashTM - 7  INFO [main] [] --- org.squashtest.tm.SquashTm: Started SquashTm in 51.068 seconds (JVM running for 52.68)
+[25-07-04 20:04:03.026] SquashTM - 7  INFO [main] [] --- org.squashtest.tm.PluginValidationPreProcessor: About to reset plugin license validation information.
+[25-07-04 20:04:03.128] SquashTM - 7  INFO [main] [] --- org.squashtest.tm.web.backend.manager.synchronisation.SynchronisationPluginManagerImpl: Found the property 'squash.external
+.synchronisation.delay'. Delay between sync will be  : 300 seconds.
+[25-07-04 20:04:03.174] SquashTM - 7  INFO [main] [] --- org.squashtest.tm.web.backend.manager.synchronisation.SynchronisationPluginManagerImpl: Registering synchronisation plugin 
+org.squashtest.tm.plugin.jirasync.JIRASyncPlugin@7c5fda87 as Xsquash4Jira
+[25-07-04 20:04:03.175] SquashTM - 7  INFO [squashtest.tm.service.ThreadPoolTaskScheduler-1] [] --- org.squashtest.tm.plugin.jirasync.service.RequirementSynchronizationService: [JI
+RA-SYNC] - Begin Synchronisation with JIRA.
+PS C:\Users\kal-e> docker logs squash
+>>
+his squash instance will use the default embedded h2 DB. This is OK for test purpose only.
+TO USE SQUASH TM IN PRODUCTION, IT IS RECOMMENDED TO USE EITHER MARIADB OR POSTGRESQL DATABASE
+Resolved configuration :
 
-INFO: Application started successfully.
-DEBUG: Connecting to database on port 5432.
-WARNING: Configuration value 'timeout' is deprecated.
-This is just a standard log line with no specific level.
-ERROR: Failed to connect to remote server.
-CRITICAL: System shutting down due to a fatal error!
+DB_TYPE       h2
+DB_HOST       ..
+DB_PORT
+DB_NAME       squashtm
+DB_SCHEMA
+DB_USERNAME   sa
+DB_PASSWORD   ************
+DB_SSLMODE
+DB_URL        jdbc:h2:../data/squash-tm;NON_KEYWORDS=ROW,VALUE
+
+
+testing : is database present
+Targeting ..:(h2)
+Waiting until database is available...
+Database is up. Is it new ?
+The database is empty, it will be initialized by Squash
+
+JAVA XMS: -Xms128m
+JAVA_XMX: -Xmx2048m
+
+
+**Starting plugins on boot**
+
+--> Found start-plugins.cfg file. Parsing through it to find the plugins:
+
+WARNING: No plugins were copied into plugins directory, procede with only core plugins
+
+End of starting plugin phase
+
+
+/opt/install-script.sh : checking java environment... done
+checking version... sh: JAVA_TOOL_OPTIONS:: out of range
+done
+/opt/install-script.sh : starting Squash TM...
+/opt/install-script.sh : checking java environment... done
+checking version... sh: JAVA_TOOL_OPTIONS:: out of range
+done
+/opt/install-script.sh : starting Squash TM...
+Picked up JAVA_TOOL_OPTIONS: -Djava.awt.headless=true
+                                            .'.'
+                                    .ooPp.,'  `.?0do.
+                                  .d00Pd00Pd00b?00b?0b.
+                                  d00Pd00PPd00b?000b?0b.
+ __                       _    ___000Pd00Pd000b?000b?00b
+/ _\ __ _ _   _  __ _ ___| |__/__   \/\/\b?000Pd000Pd00P
+\ \ / _` | | | |/ _` / __| '_ \ / /\/    \?000Pd000Pd00P
+_\ \ (_| | |_| | (_| \__ \ | | / / / /\/\ \?00Pd00Pd00P'
+\__/\__, |\__,_|\__,_|___/_| |_\/  \/    \/b?0Pd0Pd0P~'
+=======|_|=============================================
+
+Squash Test Management
+
+
+
+[25-07-04 20:03:12.720] SquashTM - 7  INFO [main] [] --- org.squashtest.tm.PluginsPathClasspathExtender: Enumerating plugins / jars in folder '/opt/squash-tm/bin/../plugins'       
+[25-07-04 20:03:12.770] SquashTM - 7  INFO [main] [] --- org.squashtest.tm.PluginsPathClasspathExtender: Jar 'file:/opt/squash-tm/bin/../plugins/api.rest.core-9.0.0.RELEASE.jar' wi
+ll be added to classpath
+[25-07-04 20:03:12.770] SquashTM - 7  INFO [main] [] --- org.squashtest.tm.PluginsPathClasspathExtender: Jar 'file:/opt/squash-tm/bin/../plugins/sync.xsquash4jira-9.0.0.RELEASE.jar
+' will be added to classpath
+[25-07-04 20:03:12.770] SquashTM - 7  INFO [main] [] --- org.squashtest.tm.PluginsPathClasspathExtender: Jar 'file:/opt/squash-tm/bin/../plugins/api.rest.services-9.0.0.RELEASE.jar
+' will be added to classpath
+[25-07-04 20:03:12.770] SquashTM - 7  INFO [main] [] --- org.squashtest.tm.PluginsPathClasspathExtender: Jar 'file:/opt/squash-tm/bin/../plugins/report.qualitativecoverage-9.0.0.RE
+LEASE.jar' will be added to classpath
+[25-07-04 20:03:12.771] SquashTM - 7  INFO [main] [] --- org.squashtest.tm.PluginsPathClasspathExtender: Jar 'file:/opt/squash-tm/bin/../plugins/bugtracker.mantis-9.0.0.RELEASE.jar
+' will be added to classpath
+[25-07-04 20:03:12.771] SquashTM - 7  INFO [main] [] --- org.squashtest.tm.PluginsPathClasspathExtender: Jar 'file:/opt/squash-tm/bin/../plugins/report.books.testcases.editable-9.0
+.0.RELEASE.jar' will be added to classpath
+[25-07-04 20:03:12.771] SquashTM - 7  INFO [main] [] --- org.squashtest.tm.PluginsPathClasspathExtender: Jar 'file:/opt/squash-tm/bin/../plugins/report.books.requirements.editable-
+9.0.0.RELEASE.jar' will be added to classpath
+[25-07-04 20:03:12.771] SquashTM - 7  INFO [main] [] --- org.squashtest.tm.PluginsPathClasspathExtender: Classpath was extended with the content of plugins folder
+[25-07-04 20:03:12.783] SquashTM - 7  INFO [main] [] --- org.squashtest.tm.SquashTm: Starting SquashTm using Java 17.0.13 on 4f891a20d6da with PID 7 (/opt/squash-tm/bundles/squash-
+tm.war started by squashtm in /opt/squash-tm/bin)
+[25-07-04 20:03:12.784] SquashTM - 7  INFO [main] [] --- org.squashtest.tm.SquashTm: The following 1 profile is active: "h2"
+[25-07-04 20:03:13.561] SquashTM - 7  INFO [main] [] --- org.squashtest.tm.PluginsPathClasspathExtender: loaded
+[25-07-04 20:03:17.987] SquashTM - 7  INFO [main] [] --- org.springframework.data.repository.config.RepositoryConfigurationDelegate: Bootstrapping Spring Data JPA repositories in D
+EFAULT mode.
+[25-07-04 20:03:19.105] SquashTM - 7  INFO [main] [] --- org.springframework.data.repository.config.RepositoryConfigurationDelegate: Finished Spring Data repository scanning in 110
+5 ms. Found 78 JPA repository interfaces.
+[25-07-04 20:03:19.108] SquashTM - 7  INFO [main] [] --- org.springframework.data.repository.config.RepositoryConfigurationDelegate: Bootstrapping Spring Data JPA repositories in D
+EFAULT mode.
+[25-07-04 20:03:19.248] SquashTM - 7  INFO [main] [] --- org.springframework.data.repository.config.RepositoryConfigurationDelegate: Finished Spring Data repository scanning in 139
+ ms. Found 33 JPA repository interfaces.
+[25-07-04 20:03:21.852] SquashTM - 7  INFO [main] [] --- org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker: Bean 'securityConfig' of ty
+pe [org.squashtest.tm.service.SecurityConfig$$EnhancerBySpringCGLIB$$40fa9d75] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-p
+roxying)
+[25-07-04 20:03:21.863] SquashTM - 7  INFO [main] [] --- org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker: Bean 'org.springframework.b
+oot.autoconfigure.jdbc.DataSourceConfiguration$Hikari' of type [org.springframework.boot.autoconfigure.jdbc.DataSourceConfiguration$Hikari] is not eligible for getting processed by
+ all BeanPostProcessors (for example: not eligible for auto-proxying)
+[25-07-04 20:03:21.889] SquashTM - 7  INFO [main] [] --- org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker: Bean 'spring.datasource-org
+.springframework.boot.autoconfigure.jdbc.DataSourceProperties' of type [org.springframework.boot.autoconfigure.jdbc.DataSourceProperties] is not eligible for getting processed by a
+ll BeanPostProcessors (for example: not eligible for auto-proxying)
+[25-07-04 20:03:21.909] SquashTM - 7  INFO [main] [] --- org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker: Bean 'dataSource' of type [
+com.zaxxer.hikari.HikariDataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+[25-07-04 20:03:21.955] SquashTM - 7  INFO [main] [] --- org.squashtest.tm.service.internal.security.SquashUserDetailsManagerImpl: No authentication manager set. Reauthentication o
+f users when changing passwords will not be performed.
+[25-07-04 20:03:21.955] SquashTM - 7  INFO [main] [] --- org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker: Bean 'userDetailsManager.ca
+seSensitive' of type [org.squashtest.tm.service.internal.security.SquashUserDetailsManagerImpl] is not eligible for getting processed by all BeanPostProcessors (for example: not el
+igible for auto-proxying)
+[25-07-04 20:03:21.982] SquashTM - 7  INFO [main] [] --- org.squashtest.tm.service.internal.security.SquashUserDetailsManagerImpl: No authentication manager set. Reauthentication o
+f users when changing passwords will not be performed.
+[25-07-04 20:03:21.983] SquashTM - 7  INFO [main] [] --- org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker: Bean 'userDetailsManager.ca
+seInsensitive' of type [org.squashtest.tm.service.internal.security.SquashUserDetailsManagerImpl] is not eligible for getting processed by all BeanPostProcessors (for example: not 
+eligible for auto-proxying)
+[25-07-04 20:03:21.985] SquashTM - 7  INFO [main] [] --- org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker: Bean 'securityConfig.Squash
+MethodSecurityConfiguration' of type [org.squashtest.tm.service.SecurityConfig$SquashMethodSecurityConfiguration$$EnhancerBySpringCGLIB$$2b39c927] is not eligible for getting proce
+ssed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+[25-07-04 20:03:21.993] SquashTM - 7  INFO [main] [] --- org.squashtest.tm.service.internal.spring.CompositeDelegatingParameterNameDiscoverer: Adding to CompositeDelegatingParamete
+rNameDiscoverer a discoverer of type class org.springframework.core.LocalVariableTableParameterNameDiscoverer
+[25-07-04 20:03:21.994] SquashTM - 7  INFO [main] [] --- org.squashtest.tm.service.internal.spring.CompositeDelegatingParameterNameDiscoverer: Adding to CompositeDelegatingParamete
+rNameDiscoverer a discoverer of type class org.squashtest.tm.service.internal.spring.ArgumentPositionParameterNameDiscoverer
+[25-07-04 20:03:22.909] SquashTM - 7  INFO [main] [] --- org.ehcache.core.EhcacheManager: Cache 'org.squashtest.tm.domain.project.Project' created in EhcacheManager.
+[25-07-04 20:03:22.911] SquashTM - 7  INFO [main] [] --- org.ehcache.core.EhcacheManager: Cache 'org.squashtest.tm.domain.bugtracker.domain.BugTracker' created in EhcacheManager.  
+[25-07-04 20:03:22.913] SquashTM - 7  INFO [main] [] --- org.ehcache.core.EhcacheManager: Cache 'org.squashtest.tm.domain.aiserver.AiServer' created in EhcacheManager.
+[25-07-04 20:03:22.915] SquashTM - 7  INFO [main] [] --- org.ehcache.core.EhcacheManager: Cache 'org.squashtest.tm.domain.testautomation.TestAutomationServer' created in EhcacheMan
+ager.
+[25-07-04 20:03:22.917] SquashTM - 7  INFO [main] [] --- org.ehcache.core.EhcacheManager: Cache 'aclCache' created in EhcacheManager.
+[25-07-04 20:03:22.946] SquashTM - 7  INFO [main] [] --- org.ehcache.jsr107.Eh107CacheManager: Registering Ehcache MBean javax.cache:type=CacheStatistics,CacheManager=jar.nested./o
+pt/squash-tm/bundles/squash-tm.war/!WEB-INF/lib/tm.service-9.0.0.RELEASE.jar!/ehcache.xml,Cache=org.squashtest.tm.domain.project.Project
+[25-07-04 20:03:22.949] SquashTM - 7  INFO [main] [] --- org.ehcache.jsr107.Eh107CacheManager: Registering Ehcache MBean javax.cache:type=CacheStatistics,CacheManager=jar.nested./o
+pt/squash-tm/bundles/squash-tm.war/!WEB-INF/lib/tm.service-9.0.0.RELEASE.jar!/ehcache.xml,Cache=org.squashtest.tm.domain.bugtracker.domain.BugTracker
+[25-07-04 20:03:22.950] SquashTM - 7  INFO [main] [] --- org.ehcache.jsr107.Eh107CacheManager: Registering Ehcache MBean javax.cache:type=CacheStatistics,CacheManager=jar.nested./o
+pt/squash-tm/bundles/squash-tm.war/!WEB-INF/lib/tm.service-9.0.0.RELEASE.jar!/ehcache.xml,Cache=org.squashtest.tm.domain.aiserver.AiServer
+[25-07-04 20:03:22.951] SquashTM - 7  INFO [main] [] --- org.ehcache.jsr107.Eh107CacheManager: Registering Ehcache MBean javax.cache:type=CacheStatistics,CacheManager=jar.nested./o
+pt/squash-tm/bundles/squash-tm.war/!WEB-INF/lib/tm.service-9.0.0.RELEASE.jar!/ehcache.xml,Cache=org.squashtest.tm.domain.testautomation.TestAutomationServer
+[25-07-04 20:03:22.951] SquashTM - 7  INFO [main] [] --- org.ehcache.jsr107.Eh107CacheManager: Registering Ehcache MBean javax.cache:type=CacheStatistics,CacheManager=jar.nested./o
+pt/squash-tm/bundles/squash-tm.war/!WEB-INF/lib/tm.service-9.0.0.RELEASE.jar!/ehcache.xml,Cache=aclCache
+[25-07-04 20:03:22.982] SquashTM - 7  INFO [main] [] --- com.zaxxer.hikari.HikariDataSource: HikariPool-1 - Starting...
+[25-07-04 20:03:23.533] SquashTM - 7  INFO [main] [] --- com.zaxxer.hikari.HikariDataSource: HikariPool-1 - Start completed.
+[25-07-04 20:03:24.778] SquashTM - 7  INFO [main] [] --- org.jooq.Constants:
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@@@@@@@@@@@@  @@        @@@@@@@@@@
+@@@@@@@@@@@@@@@@@@@@        @@@@@@@@@@
+@@@@@@@@@@@@@@@@  @@  @@    @@@@@@@@@@
+@@@@@@@@@@  @@@@  @@  @@    @@@@@@@@@@
+@@@@@@@@@@        @@        @@@@@@@@@@
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@@@@@@        @@        @@@@@@@@@@
+@@@@@@@@@@    @@  @@  @@@@  @@@@@@@@@@
+@@@@@@@@@@    @@  @@  @@@@  @@@@@@@@@@
+@@@@@@@@@@        @@  @  @  @@@@@@@@@@
+@@@@@@@@@@        @@        @@@@@@@@@@
+@@@@@@@@@@@@@@@@@@@@@@@  @@@@@@@@@@@@@
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@  Thank you for using jOOQ 3.17.22 (Build date: 2024-03-08T10:59:48Z)
+
+[25-07-04 20:03:24.780] SquashTM - 7  INFO [main] [] --- org.jooq.Constants:
+
+jOOQ tip of the day: Want to learn more about SQL? Check out our many blog posts: https://blog.jooq.org/sql
+
+[25-07-04 20:03:24.839] SquashTM - 7  INFO [main] [] --- org.jooq.impl.DefaultExecuteContext.logVersionSupport: Version                  : Database version is supported by dialect 
+H2: 2.3.230 (2024-07-15)
+[25-07-04 20:03:24.987] SquashTM - 7  INFO [main] [] --- liquibase.database: Set default schema name to PUBLIC
+[25-07-04 20:03:25.174] SquashTM - 7  INFO [main] [] --- liquibase.lockservice: Successfully acquired change log lock
+[25-07-04 20:03:26.251] SquashTM - 7  INFO [main] [] --- liquibase.changelog: Reading from PUBLIC.DATABASECHANGELOG
+[25-07-04 20:03:26.343] SquashTM - 7  INFO [main] [] --- liquibase.servicelocator: Cannot load service: liquibase.hub.HubService: Provider liquibase.hub.core.StandardHubService cou
+ld not be instantiated
+[25-07-04 20:03:26.372] SquashTM - 7  INFO [main] [] --- liquibase.lockservice: Successfully released change log lock
+[25-07-04 20:03:26.543] SquashTM - 7  INFO [main] [] --- org.hibernate.jpa.internal.util.LogHelper: HHH000204: Processing PersistenceUnitInfo [name: default]
+[25-07-04 20:03:26.632] SquashTM - 7  INFO [main] [] --- org.hibernate.Version: HHH000412: Hibernate ORM core version 5.6.15.Final
+[25-07-04 20:03:26.896] SquashTM - 7  INFO [main] [] --- org.hibernate.annotations.common.Version: HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+[25-07-04 20:03:27.144] SquashTM - 7  INFO [main] [] --- org.hibernate.dialect.Dialect: HHH000400: Using dialect: org.squashtest.tm.domain.jpql.H2EnhancedDialect
+[25-07-04 20:03:27.759] SquashTM - 7  WARN [main] [] --- org.hibernate.cfg.annotations.EntityBinder: HHH000482: @org.hibernate.annotations.Cache used on a non-root entity: ignored 
+for [org.squashtest.tm.domain.project.Project]. Please see the Hibernate documentation for proper usage.
+[25-07-04 20:03:27.805] SquashTM - 7  WARN [main] [] --- org.hibernate.cfg.annotations.EntityBinder: HHH000482: @org.hibernate.annotations.Cache used on a non-root entity: ignored 
+for [org.squashtest.tm.domain.testautomation.TestAutomationServer]. Please see the Hibernate documentation for proper usage.
+[25-07-04 20:03:27.819] SquashTM - 7  WARN [main] [] --- org.hibernate.cfg.AnnotationBinder: HHH000133: Discriminator column has to be defined in the root entity, it will be ignore
+d in subclass: org.squashtest.tm.domain.environmentvariable.SingleSelectEnvironmentVariable
+[25-07-04 20:03:27.830] SquashTM - 7  WARN [main] [] --- org.hibernate.cfg.annotations.EntityBinder: HHH000482: @org.hibernate.annotations.Cache used on a non-root entity: ignored 
+for [org.squashtest.tm.domain.aiserver.AiServer]. Please see the Hibernate documentation for proper usage.
+[25-07-04 20:03:27.918] SquashTM - 7  WARN [main] [] --- org.hibernate.cfg.annotations.EntityBinder: HHH000482: @org.hibernate.annotations.Cache used on a non-root entity: ignored 
+for [org.squashtest.tm.domain.bugtracker.BugTracker]. Please see the Hibernate documentation for proper usage.
+[25-07-04 20:03:28.248] SquashTM - 7  WARN [main] [] --- org.hibernate.id.UUIDHexGenerator: HHH000409: Using org.hibernate.id.UUIDHexGenerator which does not generate IETF RFC 4122
+ compliant UUID values; consider using org.hibernate.id.UUIDGenerator instead
+[25-07-04 20:03:28.405] SquashTM - 7  WARN [main] [] --- org.hibernate.orm.cache: HHH90001006: Missing cache[default-update-timestamps-region] was created on-the-fly. The created c
+ache will use a provider-specific default configuration: make sure you defined one. You can disable this warning by setting 'hibernate.javax.cache.missing_cache_strategy' to 'creat
+e'.
+[25-07-04 20:03:28.414] SquashTM - 7  INFO [main] [] --- org.ehcache.core.EhcacheManager: Cache 'default-update-timestamps-region' created in EhcacheManager.
+[25-07-04 20:03:28.415] SquashTM - 7  WARN [main] [] --- org.hibernate.orm.cache: HHH90001006: Missing cache[default-query-results-region] was created on-the-fly. The created cache
+ will use a provider-specific default configuration: make sure you defined one. You can disable this warning by setting 'hibernate.javax.cache.missing_cache_strategy' to 'create'. 
+[25-07-04 20:03:28.419] SquashTM - 7  INFO [main] [] --- org.ehcache.core.EhcacheManager: Cache 'default-query-results-region' created in EhcacheManager.
+[25-07-04 20:03:31.229] SquashTM - 7  INFO [main] [] --- org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator: HHH000490: Using JtaPlatform implementation: [
+org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+[25-07-04 20:03:31.632] SquashTM - 7  WARN [main] [] --- org.hibernate.orm.deprecation: HHH90000017: Found use of deprecated entity-type selector syntax in HQL/JPQL query ['st.clas
+s']; use TYPE operator instead : type(st)
+[25-07-04 20:03:31.729] SquashTM - 7  WARN [main] [] --- org.hibernate.dialect.function.TemplateRenderer: HHH000174: Function template anticipated 4 arguments, but 1 arguments enco
+untered
+[25-07-04 20:03:31.797] SquashTM - 7  WARN [main] [] --- org.hibernate.dialect.function.TemplateRenderer: HHH000174: Function template anticipated 4 arguments, but 1 arguments enco
+untered
+[25-07-04 20:03:31.830] SquashTM - 7  WARN [main] [] --- org.hibernate.orm.deprecation: HHH90000017: Found use of deprecated entity-type selector syntax in HQL/JPQL query ['tc.clas
+s']; use TYPE operator instead : type(tc)
+[25-07-04 20:03:31.860] SquashTM - 7  WARN [main] [] --- org.hibernate.orm.deprecation: HHH90000017: Found use of deprecated entity-type selector syntax in HQL/JPQL query ['steps.c
+lass']; use TYPE operator instead : type(steps)
+[25-07-04 20:03:31.870] SquashTM - 7  WARN [main] [] --- org.hibernate.orm.deprecation: HHH90000017: Found use of deprecated entity-type selector syntax in HQL/JPQL query ['p.class
+']; use TYPE operator instead : type(p)
+[25-07-04 20:03:31.977] SquashTM - 7  WARN [main] [] --- org.hibernate.orm.deprecation: HHH90000017: Found use of deprecated entity-type selector syntax in HQL/JPQL query ['st.clas
+s']; use TYPE operator instead : type(st)
+[25-07-04 20:03:32.004] SquashTM - 7  WARN [main] [] --- org.hibernate.orm.deprecation: HHH90000017: Found use of deprecated entity-type selector syntax in HQL/JPQL query ['steps.c
+lass']; use TYPE operator instead : type(steps)
+[25-07-04 20:03:32.062] SquashTM - 7  WARN [main] [] --- org.hibernate.orm.deprecation: HHH90000017: Found use of deprecated entity-type selector syntax in HQL/JPQL query ['st.clas
+s']; use TYPE operator instead : type(st)
+[25-07-04 20:03:32.173] SquashTM - 7  WARN [main] [] --- org.hibernate.orm.deprecation: HHH90000017: Found use of deprecated entity-type selector syntax in HQL/JPQL query ['step.cl
+ass']; use TYPE operator instead : type(step)
+[25-07-04 20:03:32.216] SquashTM - 7  WARN [main] [] --- org.hibernate.dialect.function.TemplateRenderer: HHH000174: Function template anticipated 4 arguments, but 1 arguments enco
+untered
+[25-07-04 20:03:32.274] SquashTM - 7  WARN [main] [] --- org.hibernate.dialect.function.TemplateRenderer: HHH000174: Function template anticipated 4 arguments, but 1 arguments enco
+untered
+[25-07-04 20:03:32.325] SquashTM - 7  WARN [main] [] --- org.hibernate.dialect.function.TemplateRenderer: HHH000174: Function template anticipated 4 arguments, but 1 arguments enco
+untered
+[25-07-04 20:03:32.351] SquashTM - 7  WARN [main] [] --- org.hibernate.orm.deprecation: HHH90000017: Found use of deprecated entity-type selector syntax in HQL/JPQL query ['step.cl
+ass']; use TYPE operator instead : type(step)
+[25-07-04 20:03:32.536] SquashTM - 7  WARN [main] [] --- org.hibernate.orm.deprecation: HHH90000017: Found use of deprecated entity-type selector syntax in HQL/JPQL query ['cfv.cla
+ss']; use TYPE operator instead : type(cfv)
+[25-07-04 20:03:32.549] SquashTM - 7  WARN [main] [] --- org.hibernate.orm.deprecation: HHH90000017: Found use of deprecated entity-type selector syntax in HQL/JPQL query ['ts.clas
+s']; use TYPE operator instead : type(ts)
+[25-07-04 20:03:32.564] SquashTM - 7  WARN [main] [] --- org.hibernate.dialect.function.TemplateRenderer: HHH000174: Function template anticipated 4 arguments, but 1 arguments enco
+untered
+[25-07-04 20:03:32.565] SquashTM - 7  WARN [main] [] --- org.hibernate.dialect.function.TemplateRenderer: HHH000174: Function template anticipated 4 arguments, but 1 arguments enco
+untered
+[25-07-04 20:03:32.581] SquashTM - 7  WARN [main] [] --- org.hibernate.dialect.function.TemplateRenderer: HHH000174: Function template anticipated 4 arguments, but 1 arguments enco
+untered
+[25-07-04 20:03:32.587] SquashTM - 7  WARN [main] [] --- org.hibernate.orm.deprecation: HHH90000017: Found use of deprecated entity-type selector syntax in HQL/JPQL query ['steps.c
+lass']; use TYPE operator instead : type(steps)
+[25-07-04 20:03:32.587] SquashTM - 7  WARN [main] [] --- org.hibernate.orm.deprecation: HHH90000017: Found use of deprecated entity-type selector syntax in HQL/JPQL query ['ts.clas
+s']; use TYPE operator instead : type(ts)
+[25-07-04 20:03:32.614] SquashTM - 7  WARN [main] [] --- org.hibernate.orm.deprecation: HHH90000017: Found use of deprecated entity-type selector syntax in HQL/JPQL query ['cfv.cla
+ss']; use TYPE operator instead : type(cfv)
+[25-07-04 20:03:32.653] SquashTM - 7  WARN [main] [] --- org.hibernate.orm.deprecation: HHH90000017: Found use of deprecated entity-type selector syntax in HQL/JPQL query ['step.cl
+ass']; use TYPE operator instead : type(step)
+[25-07-04 20:03:32.655] SquashTM - 7  WARN [main] [] --- org.hibernate.orm.deprecation: HHH90000017: Found use of deprecated entity-type selector syntax in HQL/JPQL query ['st.clas
+s']; use TYPE operator instead : type(st)
+[25-07-04 20:03:32.656] SquashTM - 7  WARN [main] [] --- org.hibernate.orm.deprecation: HHH90000017: Found use of deprecated entity-type selector syntax in HQL/JPQL query ['st.clas
+s']; use TYPE operator instead : type(st)
+[25-07-04 20:03:32.657] SquashTM - 7  WARN [main] [] --- org.hibernate.orm.deprecation: HHH90000017: Found use of deprecated entity-type selector syntax in HQL/JPQL query ['st.clas
+s']; use TYPE operator instead : type(st)
+[25-07-04 20:03:32.664] SquashTM - 7  WARN [main] [] --- org.hibernate.orm.deprecation: HHH90000017: Found use of deprecated entity-type selector syntax in HQL/JPQL query ['st.clas
+s']; use TYPE operator instead : type(st)
+[25-07-04 20:03:32.704] SquashTM - 7  WARN [main] [] --- org.hibernate.orm.deprecation: HHH90000017: Found use of deprecated entity-type selector syntax in HQL/JPQL query ['steps.c
+lass']; use TYPE operator instead : type(steps)
+[25-07-04 20:03:32.755] SquashTM - 7  WARN [main] [] --- org.hibernate.dialect.function.TemplateRenderer: HHH000174: Function template anticipated 4 arguments, but 1 arguments enco
+untered
+[25-07-04 20:03:32.755] SquashTM - 7  WARN [main] [] --- org.hibernate.dialect.function.TemplateRenderer: HHH000174: Function template anticipated 4 arguments, but 1 arguments enco
+untered
+[25-07-04 20:03:32.766] SquashTM - 7  WARN [main] [] --- org.hibernate.orm.deprecation: HHH90000017: Found use of deprecated entity-type selector syntax in HQL/JPQL query ['r.class
+']; use TYPE operator instead : type(r)
+[25-07-04 20:03:32.772] SquashTM - 7  WARN [main] [] --- org.hibernate.orm.deprecation: HHH90000017: Found use of deprecated entity-type selector syntax in HQL/JPQL query ['step.cl
+ass']; use TYPE operator instead : type(step)
+[25-07-04 20:03:32.782] SquashTM - 7  WARN [main] [] --- org.hibernate.orm.deprecation: HHH90000017: Found use of deprecated entity-type selector syntax in HQL/JPQL query ['cfv.cla
+ss']; use TYPE operator instead : type(cfv)
+[25-07-04 20:03:32.788] SquashTM - 7  INFO [main] [] --- org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean: Initialized JPA EntityManagerFactory for persistence un
+it 'default'
+[25-07-04 20:03:33.033] SquashTM - 7  INFO [main] [] --- org.squashtest.tm.service.RepositoryConfig: init JooqConfiguration
+[25-07-04 20:03:34.477] SquashTM - 7  INFO [main] [] --- org.squashtest.tm.web.backend.context.ReloadableSquashTmMessageSource: Registering *configured* path file:../conf/lang/core
+/messages as a basename for application MessageSource
+[25-07-04 20:03:34.477] SquashTM - 7  INFO [main] [] --- org.squashtest.tm.web.backend.context.ReloadableSquashTmMessageSource: Registering *configured* path /WEB-INF/messages/core
+/messages as a basename for application MessageSource
+[25-07-04 20:03:34.477] SquashTM - 7  INFO [main] [] --- org.squashtest.tm.web.backend.context.ReloadableSquashTmMessageSource: Registering *configured* path /WEB-INF/messages/tm/m
+essages as a basename for application MessageSource
+[25-07-04 20:03:34.477] SquashTM - 7  INFO [main] [] --- org.squashtest.tm.web.backend.context.ReloadableSquashTmMessageSource: Registering *configured* path org/springframework/se
+curity/messages as a basename for application MessageSource
+[25-07-04 20:03:34.481] SquashTM - 7  INFO [main] [] --- org.squashtest.tm.web.backend.context.ReloadableSquashTmMessageSource: Registering *discovered* plugin classpath path class
+path:org/squashtest/tm/plugin/report/std/messages as a basename for application MessageSource
+[25-07-04 20:03:34.482] SquashTM - 7  INFO [main] [] --- org.squashtest.tm.web.backend.context.ReloadableSquashTmMessageSource: Registering *discovered* plugin classpath path class
+path:org/squashtest/tm/plugin/jirasync/messages as a basename for application MessageSource
+[25-07-04 20:03:34.482] SquashTM - 7  INFO [main] [] --- org.squashtest.tm.web.backend.context.ReloadableSquashTmMessageSource: Registering *discovered* plugin classpath path class
+path:org/squashtest/tm/plugin/rest/messages as a basename for application MessageSource
+[25-07-04 20:03:34.482] SquashTM - 7  INFO [main] [] --- org.squashtest.tm.web.backend.context.ReloadableSquashTmMessageSource: Registering *discovered* plugin classpath path class
+path:org/squashtest/tm/plugin/report/qualitativecoverage/messages as a basename for application MessageSource
+[25-07-04 20:03:34.482] SquashTM - 7  INFO [main] [] --- org.squashtest.tm.web.backend.context.ReloadableSquashTmMessageSource: Registering *discovered* plugin classpath path class
+path:org/squashtest/tm/plugin/bugtracker/mantis/messages as a basename for application MessageSource
+[25-07-04 20:03:34.482] SquashTM - 7  INFO [main] [] --- org.squashtest.tm.web.backend.context.ReloadableSquashTmMessageSource: Registering *discovered* plugin classpath path class
+path:org/squashtest/tm/plugin/report/books/testcases/messages as a basename for application MessageSource
+[25-07-04 20:03:34.483] SquashTM - 7  INFO [main] [] --- org.squashtest.tm.web.backend.context.ReloadableSquashTmMessageSource: Registering *discovered* plugin classpath path class
+path:org/squashtest/tm/plugin/report/books/requirements/messages as a basename for application MessageSource
+[25-07-04 20:03:34.956] SquashTM - 7  INFO [main] [] --- org.springframework.boot.web.embedded.tomcat.TomcatWebServer: Tomcat initialized with port(s): 8080 (http)
+[25-07-04 20:03:34.973] SquashTM - 7  INFO [main] [] --- org.apache.catalina.core.StandardService: Starting service [Tomcat]
+[25-07-04 20:03:34.973] SquashTM - 7  INFO [main] [] --- org.apache.catalina.core.StandardEngine: Starting Servlet engine: [Apache Tomcat/9.0.83]
+[25-07-04 20:03:45.707] SquashTM - 7  INFO [main] [] --- org.apache.jasper.servlet.TldScanner: At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for
+ this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+[25-07-04 20:03:46.014] SquashTM - 7  INFO [main] [] --- org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/squash]: Initializing Spring embedded WebApplicationContext  
+[25-07-04 20:03:46.014] SquashTM - 7  INFO [main] [] --- org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext: Root WebApplicationContext: initialization
+ completed in 32451 ms
+[25-07-04 20:03:46.518] SquashTM - 7  INFO [main] [] --- org.squashtest.tm.core.dynamicmanager.factory.AbstractDynamicComponentFactoryBean: Initializing Dynamic component of type G
+enericProjectManagerService
+[25-07-04 20:03:46.521] SquashTM - 7  INFO [main] [] --- org.squashtest.tm.core.dynamicmanager.factory.AbstractDynamicComponentFactoryBean: Dynamic component GenericProjectManagerS
+ervice is bound to delegate to custom implementation named CustomGenericProjectManager
+[25-07-04 20:03:46.563] SquashTM - 7  INFO [main] [] --- org.squashtest.tm.core.dynamicmanager.factory.AbstractDynamicComponentFactoryBean: Initializing Dynamic component of type T
+eamModificationService
+[25-07-04 20:03:46.564] SquashTM - 7  INFO [main] [] --- org.squashtest.tm.core.dynamicmanager.factory.AbstractDynamicComponentFactoryBean: Dynamic component TeamModificationServic
+e is bound to delegate to custom implementation named CustomTeamModificationService
+[25-07-04 20:03:47.945] SquashTM - 7  INFO [main] [] --- org.squashtest.tm.core.dynamicmanager.factory.AbstractDynamicComponentFactoryBean: Initializing Dynamic component of type B
+ugTrackerModificationService
+[25-07-04 20:03:47.945] SquashTM - 7  INFO [main] [] --- org.squashtest.tm.core.dynamicmanager.factory.AbstractDynamicComponentFactoryBean: Dynamic component BugTrackerModification
+Service is bound to delegate to custom implementation named CustomBugTrackerModificationService
+[25-07-04 20:03:48.114] SquashTM - 7  INFO [main] [] --- org.squashtest.tm.service.internal.bugtracker.BugTrackerConnectorFactory: Registering Connector provider for bug trackers o
+f kind 'jira.xsquash'
+[25-07-04 20:03:48.114] SquashTM - 7  INFO [main] [] --- org.squashtest.tm.service.internal.bugtracker.BugTrackerConnectorFactory: Registering Connector provider for bug trackers o
+f kind 'mantis'
+[25-07-04 20:03:49.784] SquashTM - 7  INFO [main] [] --- org.squashtest.tm.service.internal.testautomation.TestAutomationConnectorRegistry: Registering connector for test automatio
+n platforms of kind 'jenkins'
+[25-07-04 20:03:49.785] SquashTM - 7  INFO [main] [] --- org.squashtest.tm.service.internal.testautomation.TestAutomationConnectorRegistry: Registering connector for test automatio
+n platforms of kind 'squashOrchestrator'
+[25-07-04 20:03:50.521] SquashTM - 7  INFO [main] [] --- org.squashtest.tm.core.dynamicmanager.factory.AbstractDynamicComponentFactoryBean: Initializing Dynamic component of type T
+estSuiteModificationService
+[25-07-04 20:03:50.521] SquashTM - 7  INFO [main] [] --- org.squashtest.tm.core.dynamicmanager.factory.AbstractDynamicComponentFactoryBean: Dynamic component TestSuiteModificationS
+ervice is bound to delegate to custom implementation named CustomTestSuiteModificationService
+[25-07-04 20:03:50.708] SquashTM - 7  INFO [main] [] --- org.squashtest.tm.core.dynamicmanager.factory.AbstractDynamicComponentFactoryBean: Initializing Dynamic component of type M
+ilestoneManagerService
+[25-07-04 20:03:50.708] SquashTM - 7  INFO [main] [] --- org.squashtest.tm.core.dynamicmanager.factory.AbstractDynamicComponentFactoryBean: Dynamic component MilestoneManagerServic
+e is bound to delegate to custom implementation named CustomMilestoneManager
+[25-07-04 20:03:51.339] SquashTM - 7  INFO [main] [] --- org.squashtest.tm.core.dynamicmanager.factory.AbstractDynamicComponentFactoryBean: Initializing Dynamic component of type P
+rojectManagerService
+[25-07-04 20:03:51.340] SquashTM - 7  INFO [main] [] --- org.squashtest.tm.core.dynamicmanager.factory.AbstractDynamicComponentFactoryBean: Dynamic component ProjectManagerService 
+is bound to delegate to custom implementation named CustomProjectModificationService
+[25-07-04 20:03:52.795] SquashTM - 7  INFO [main] [] --- org.squashtest.tm.core.dynamicmanager.factory.AbstractDynamicComponentFactoryBean: Initializing Dynamic component of type I
+terationModificationService
+[25-07-04 20:03:52.795] SquashTM - 7  INFO [main] [] --- org.squashtest.tm.core.dynamicmanager.factory.AbstractDynamicComponentFactoryBean: Dynamic component IterationModificationS
+ervice is bound to delegate to custom implementation named CustomIterationModificationService
+[25-07-04 20:03:52.896] SquashTM - 7  INFO [main] [] --- org.squashtest.tm.core.dynamicmanager.factory.AbstractDynamicComponentFactoryBean: Initializing Dynamic component of type C
+ampaignModificationService
+[25-07-04 20:03:52.897] SquashTM - 7  INFO [main] [] --- org.squashtest.tm.core.dynamicmanager.factory.AbstractDynamicComponentFactoryBean: Dynamic component CampaignModificationSe
+rvice is bound to delegate to custom implementation named CustomCampaignModificationService
+[25-07-04 20:03:53.072] SquashTM - 7  INFO [main] [] --- org.squashtest.tm.core.dynamicmanager.factory.AbstractDynamicComponentFactoryBean: Initializing Dynamic component of type S
+printModificationService
+[25-07-04 20:03:53.073] SquashTM - 7  INFO [main] [] --- org.squashtest.tm.core.dynamicmanager.factory.AbstractDynamicComponentFactoryBean: Dynamic component SprintModificationServ
+ice is bound to delegate to custom implementation named CustomSprintModificationService
+[25-07-04 20:03:53.609] SquashTM - 7  INFO [main] [] --- org.squashtest.tm.core.dynamicmanager.factory.AbstractDynamicComponentFactoryBean: Initializing Dynamic component of type T
+estCaseModificationService
+[25-07-04 20:03:53.609] SquashTM - 7  INFO [main] [] --- org.squashtest.tm.core.dynamicmanager.factory.AbstractDynamicComponentFactoryBean: Dynamic component TestCaseModificationSe
+rvice is bound to delegate to custom implementation named CustomTestCaseModificationService
+[25-07-04 20:03:53.649] SquashTM - 7  INFO [main] [] --- org.squashtest.tm.core.dynamicmanager.factory.AbstractDynamicComponentFactoryBean: Initializing Dynamic component of type R
+equirementVersionManagerService
+[25-07-04 20:03:53.649] SquashTM - 7  INFO [main] [] --- org.squashtest.tm.core.dynamicmanager.factory.AbstractDynamicComponentFactoryBean: Dynamic component RequirementVersionMana
+gerService is bound to delegate to custom implementation named CustomRequirementVersionManagerService
+[25-07-04 20:03:53.985] SquashTM - 7  INFO [main] [] --- org.squashtest.tm.web.backend.manager.wizard.WorkspaceWizardManagerImpl: Registering workspace wizard org.squashtest.tm.plu
+gin.jirasync.JIRASyncPlugin@7c5fda87 for workspace CAMPAIGN_WORKSPACE
+[25-07-04 20:03:54.153] SquashTM - 7  INFO [main] [] --- org.springframework.web.servlet.view.jasperreports.AbstractJasperReportsView: Loading pre-compiled Jasper Report from class
+ path resource [jasperreports/execution-progression.jasper]
+[25-07-04 20:03:54.373] SquashTM - 7  INFO [main] [] --- org.springframework.web.servlet.view.jasperreports.AbstractJasperReportsView: Loading pre-compiled Jasper Report from class
+ path resource [jasperreports/execution-progression_iteration.jasper]
+[25-07-04 20:03:54.390] SquashTM - 7  INFO [main] [] --- org.springframework.web.servlet.view.jasperreports.AbstractJasperReportsView: Loading pre-compiled Jasper Report from class
+ path resource [jasperreports/execution-progression_campaign.jasper]
+[25-07-04 20:03:54.414] SquashTM - 7  INFO [main] [] --- org.springframework.web.servlet.view.jasperreports.AbstractJasperReportsView: Loading pre-compiled Jasper Report from class
+ path resource [jasperreports/execution-progression-view0.jasper]
+[25-07-04 20:03:54.426] SquashTM - 7  INFO [main] [] --- org.springframework.web.servlet.view.jasperreports.AbstractJasperReportsView: Loading pre-compiled Jasper Report from class
+ path resource [jasperreports/execution-progression-view0_campaign.jasper]
+[25-07-04 20:03:54.428] SquashTM - 7  INFO [main] [] --- org.springframework.web.servlet.view.jasperreports.AbstractJasperReportsView: Loading pre-compiled Jasper Report from class
+ path resource [jasperreports/execution-progression-view0_campaign_iterations.jasper]
+[25-07-04 20:03:54.557] SquashTM - 7  INFO [main] [] --- org.springframework.web.servlet.view.jasperreports.AbstractJasperReportsView: Loading pre-compiled Jasper Report from class
+ path resource [jasperreports/requirement-coverage-overview.jasper]
+[25-07-04 20:03:54.585] SquashTM - 7  INFO [main] [] --- org.springframework.web.servlet.view.jasperreports.AbstractJasperReportsView: Loading pre-compiled Jasper Report from class
+ path resource [jasperreports/requirement-coverage_projects.jasper]
+[25-07-04 20:03:54.589] SquashTM - 7  INFO [main] [] --- org.springframework.web.servlet.view.jasperreports.AbstractJasperReportsView: Loading pre-compiled Jasper Report from class
+ path resource [jasperreports/requirement-coverage_requirements.jasper]
+[25-07-04 20:03:54.651] SquashTM - 7  INFO [main] [] --- org.springframework.web.servlet.view.jasperreports.AbstractJasperReportsView: Loading pre-compiled Jasper Report from class
+ path resource [jasperreports/qualitative-coverage-list.jasper]
+[25-07-04 20:03:54.655] SquashTM - 7  INFO [main] [] --- org.springframework.web.servlet.view.jasperreports.AbstractJasperReportsView: Loading pre-compiled Jasper Report from class
+ path resource [jasperreports/qualitative-coverage-list-iterations.jasper]
+[25-07-04 20:03:54.669] SquashTM - 7  INFO [main] [] --- org.springframework.web.servlet.view.jasperreports.AbstractJasperReportsView: Loading pre-compiled Jasper Report from class
+ path resource [jasperreports/qualitative-coverage-list-test-suites.jasper]
+[25-07-04 20:03:54.684] SquashTM - 7  INFO [main] [] --- org.springframework.web.servlet.view.jasperreports.AbstractJasperReportsView: Loading pre-compiled Jasper Report from class
+ path resource [jasperreports/qualitative-coverage-list-campaigns.jasper]
+[25-07-04 20:03:54.690] SquashTM - 7  INFO [main] [] --- org.springframework.web.servlet.view.jasperreports.AbstractJasperReportsView: Loading pre-compiled Jasper Report from class
+ path resource [jasperreports/qualitative-coverage-table.jasper]
+[25-07-04 20:03:54.695] SquashTM - 7  INFO [main] [] --- org.springframework.web.servlet.view.jasperreports.AbstractJasperReportsView: Loading pre-compiled Jasper Report from class
+ path resource [jasperreports/qualitative-coverage-table-iterations.jasper]
+[25-07-04 20:03:54.703] SquashTM - 7  INFO [main] [] --- org.springframework.web.servlet.view.jasperreports.AbstractJasperReportsView: Loading pre-compiled Jasper Report from class
+ path resource [jasperreports/qualitative-coverage-table-requirements.jasper]
+[25-07-04 20:03:54.708] SquashTM - 7  INFO [main] [] --- org.springframework.web.servlet.view.jasperreports.AbstractJasperReportsView: Loading pre-compiled Jasper Report from class
+ path resource [jasperreports/qualitative-coverage-table-requirements.jasper]
+[25-07-04 20:03:54.711] SquashTM - 7  INFO [main] [] --- org.springframework.web.servlet.view.jasperreports.AbstractJasperReportsView: Loading pre-compiled Jasper Report from class
+ path resource [jasperreports/qualitative-coverage-table-test-suites.jasper]
+[25-07-04 20:03:54.724] SquashTM - 7  INFO [main] [] --- org.springframework.web.servlet.view.jasperreports.AbstractJasperReportsView: Loading pre-compiled Jasper Report from class
+ path resource [jasperreports/qualitative-coverage-table-campaigns.jasper]
+[25-07-04 20:03:54.918] SquashTM - 7  INFO [main] [] --- org.squashtest.tm.web.backend.report.ReportsRegistry: Registered report [org.squashtest.tm.api.report.BasicReport@5804c2c9]
+ under Category [report.category.executionphase.name] along with Namespace [report.executionprogressfollowup.name]
+[25-07-04 20:03:54.918] SquashTM - 7  INFO [main] [] --- org.squashtest.tm.web.backend.report.ReportsRegistry: Registered report [org.squashtest.tm.api.report.BasicReport@4e5781b7]
+ under Category [report.category.preparationphase.name] along with Namespace [report.report.requirementcoveragebytests.name]
+[25-07-04 20:03:54.918] SquashTM - 7  INFO [main] [] --- org.squashtest.tm.web.backend.report.ReportsRegistry: Registered report [org.squashtest.tm.api.report.BasicReport@7a40a0d9]
+ under Category [report.category.executionphase.name] along with Namespace [report.qualitativecoverage.name]
+[25-07-04 20:03:54.918] SquashTM - 7  INFO [main] [] --- org.squashtest.tm.web.backend.report.ReportsRegistry: Registered report [org.squashtest.tm.api.report.DocxTemplaterReport@2
+38e280c] under Category [report.category.preparationphase.name] along with Namespace [report.books.testcases.report.label]
+[25-07-04 20:03:54.918] SquashTM - 7  INFO [main] [] --- org.squashtest.tm.web.backend.report.ReportsRegistry: Registered report [org.squashtest.tm.api.report.DocxTemplaterReport@4
+3e5eefe] under Category [report.category.preparationphase.name] along with Namespace [report.books.requirements.requirements.report.label]
+[25-07-04 20:03:54.921] SquashTM - 7  INFO [main] [] --- org.squashtest.tm.web.backend.report.ReportViewServletContextInitializer: Bound ServletContext to view [org.squashtest.tm.a
+pi.report.jasperreports.JasperReportsView@7d1db98e]
+[25-07-04 20:03:54.921] SquashTM - 7  INFO [main] [] --- org.squashtest.tm.web.backend.report.ReportViewServletContextInitializer: Bound ServletContext to view [org.squashtest.tm.a
+pi.report.jasperreports.JasperReportsView@2b6f7e52]
+[25-07-04 20:03:54.921] SquashTM - 7  INFO [main] [] --- org.squashtest.tm.web.backend.report.ReportViewServletContextInitializer: Bound ServletContext to view [org.squashtest.tm.a
+pi.report.jasperreports.JasperReportsView@cc4fe35]
+[25-07-04 20:03:54.921] SquashTM - 7  INFO [main] [] --- org.squashtest.tm.web.backend.report.ReportViewServletContextInitializer: Bound ServletContext to view [org.squashtest.tm.a
+pi.report.jasperreports.JasperReportsView@7081c3ba]
+[25-07-04 20:03:54.921] SquashTM - 7  INFO [main] [] --- org.squashtest.tm.web.backend.report.ReportViewServletContextInitializer: Bound ServletContext to view [org.squashtest.tm.a
+pi.report.jasperreports.JasperReportsView@40257f59]
+[25-07-04 20:03:54.922] SquashTM - 7  INFO [main] [] --- org.squashtest.tm.web.backend.report.ReportViewServletContextInitializer: Bound ServletContext to view [org.squashtest.tm.a
+pi.report.jasperreports.JasperReportsView@54326926]
+[25-07-04 20:03:54.922] SquashTM - 7  INFO [main] [] --- org.squashtest.tm.web.backend.report.ReportViewServletContextInitializer: Bound ServletContext to view [org.squashtest.tm.a
+pi.report.docxtemplater.DocxTemplaterView@2536d8aa]
+[25-07-04 20:03:54.922] SquashTM - 7  INFO [main] [] --- org.squashtest.tm.web.backend.report.ReportViewServletContextInitializer: Bound ServletContext to view [org.squashtest.tm.a
+pi.report.docxtemplater.DocxTemplaterView@300c4c44]
+[25-07-04 20:03:55.902] SquashTM - 7  INFO [main] [] --- org.squashtest.tm.core.dynamicmanager.factory.AbstractDynamicComponentFactoryBean: Initializing Dynamic component of type C
+ustomFieldManagerService
+[25-07-04 20:03:55.902] SquashTM - 7  INFO [main] [] --- org.squashtest.tm.core.dynamicmanager.factory.AbstractDynamicComponentFactoryBean: Dynamic component CustomFieldManagerServ
+ice is bound to delegate to custom implementation named CustomCustomFieldManagerService
+[25-07-04 20:03:55.962] SquashTM - 7  INFO [main] [] --- org.squashtest.tm.service.internal.system.SystemAdministrationServiceImpl: Enumerating plugins / jars in folder '/opt/squas
+h-tm/bin/../plugins'
+[25-07-04 20:03:56.232] SquashTM - 7  INFO [main] [] --- org.squashtest.tm.core.dynamicmanager.factory.AbstractDynamicComponentFactoryBean: Initializing Dynamic component of type P
+rojectTemplateManagerService
+[25-07-04 20:03:56.232] SquashTM - 7  INFO [main] [] --- org.squashtest.tm.core.dynamicmanager.factory.AbstractDynamicComponentFactoryBean: Dynamic component ProjectTemplateManager
+Service is bound to delegate to custom implementation named CustomProjectTemplateManagerService
+[25-07-04 20:03:56.343] SquashTM - 7  INFO [main] [] --- org.squashtest.tm.core.dynamicmanager.factory.AbstractDynamicComponentFactoryBean: Initializing Dynamic component of type K
+eywordTestCaseFinder
+[25-07-04 20:03:56.344] SquashTM - 7  WARN [main] [] --- org.squashtest.tm.core.dynamicmanager.factory.AbstractDynamicComponentFactoryBean: No custom implementation type could be f
+ound in Dynamic component KeywordTestCaseFinder, will not apply custom implementation lookup
+[25-07-04 20:03:58.158] SquashTM - 7  INFO [main] [] --- org.squashtest.tm.core.dynamicmanager.factory.AbstractDynamicComponentFactoryBean: Initializing Dynamic component of type T
+estStepModificationService
+[25-07-04 20:03:58.158] SquashTM - 7  INFO [main] [] --- org.squashtest.tm.core.dynamicmanager.factory.AbstractDynamicComponentFactoryBean: Dynamic component TestStepModificationSe
+rvice is bound to delegate to custom implementation named CustomTestStepModificationService
+[25-07-04 20:03:58.416] SquashTM - 7  INFO [main] [] --- org.squashtest.tm.core.dynamicmanager.factory.AbstractDynamicComponentFactoryBean: Initializing Dynamic component of type S
+printGroupModificationService
+[25-07-04 20:03:58.416] SquashTM - 7  INFO [main] [] --- org.squashtest.tm.core.dynamicmanager.factory.AbstractDynamicComponentFactoryBean: Dynamic component SprintGroupModificatio
+nService is bound to delegate to custom implementation named CustomSprintGroupModificationService
+[25-07-04 20:03:58.463] SquashTM - 7  INFO [main] [] --- org.squashtest.tm.web.backend.security.authentication.AuthenticatedMissingUserCreator: created
+[25-07-04 20:03:58.512] SquashTM - 7  INFO [main] [] --- org.squashtest.tm.service.DatabaseVersionChecker: The database version is compliant.
+[25-07-04 20:03:58.903] SquashTM - 7  INFO [main] [] --- org.squashtest.tm.service.internal.attachment.AttachmentStorageModeConfigurer: squashtm.feature.file.repository is set to f
+alse or not indicated. Attachments will be stored in database.
+[25-07-04 20:03:58.925] SquashTM - 7  INFO [main] [] --- org.squashtest.tm.service.internal.projectimporter.pivotimporter.ProjectPivotImportTaskScheduler: Found the property 'squas
+h.project-imports.delay'. Delay between each import phases will be  : 3600 seconds.
+[25-07-04 20:04:00.920] SquashTM - 7  INFO [main] [] --- org.squashtest.tm.service.SecurityConfig: initializing : daoAuthenticationProvider
+[25-07-04 20:04:01.092] SquashTM - 7  INFO [main] [] --- org.springframework.security.web.DefaultSecurityFilterChain: Will secure Ant [pattern='/automated-executions/**'] with [org
+.springframework.security.web.session.DisableEncodeUrlFilter@1d6cad7f, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@fb9ce1b, org.springfr
+amework.security.web.context.SecurityContextPersistenceFilter@1f702eeb, org.springframework.security.web.header.HeaderWriterFilter@78868c2f, org.springframework.security.web.authen
+tication.logout.LogoutFilter@5a94cb8c, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@74be7e64, org.springframework.security.web.savedrequest.Request
+CacheAwareFilter@7320d408, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@46a17c9b, org.springframework.security.web.authentication.AnonymousAu
+thenticationFilter@873ccd6, org.springframework.security.web.session.SessionManagementFilter@23fe1f80, org.springframework.security.web.access.ExceptionTranslationFilter@2ec32cae, 
+org.springframework.security.web.access.intercept.AuthorizationFilter@e650893]
+[25-07-04 20:04:01.135] SquashTM - 7  INFO [main] [] --- org.springframework.security.web.DefaultSecurityFilterChain: Will secure any request with [org.springframework.security.web
+.session.DisableEncodeUrlFilter@26064342, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@7996e288, org.springframework.security.web.context
+.SecurityContextPersistenceFilter@3564fa6a, org.springframework.security.web.header.HeaderWriterFilter@16fc7b49, org.springframework.security.web.csrf.CsrfFilter@64f8601f, org.spri
+ngframework.security.web.authentication.logout.LogoutFilter@1530b802, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@51a31187, org.springframe
+work.security.web.session.ConcurrentSessionFilter@53627124, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@13d97342, org.springframework.security.web
+.savedrequest.RequestCacheAwareFilter@6fdd3650, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@6702b5a2, org.springframework.security.web.authe
+ntication.AnonymousAuthenticationFilter@5efd7829, org.springframework.security.web.session.SessionManagementFilter@5de393ff, org.springframework.security.web.access.ExceptionTransl
+ationFilter@2bd44cd, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@381cfa70]
+[25-07-04 20:04:01.152] SquashTM - 7  INFO [main] [] --- org.springframework.security.web.DefaultSecurityFilterChain: Will secure Ant [pattern='/api/**'] with [org.springframework.
+security.web.session.DisableEncodeUrlFilter@d54323f, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@2d17f63f, org.springframework.security.
+web.context.SecurityContextPersistenceFilter@6e88c122, org.springframework.security.web.header.HeaderWriterFilter@9f16077, org.springframework.security.web.authentication.logout.Lo
+goutFilter@6cc45d6b, org.squashtest.tm.web.config.JwtTokenFilter@5aac5a81, org.squashtest.tm.web.config.CustomRestApiBasicAuthFilter@3468eba8, org.springframework.security.web.auth
+entication.www.BasicAuthenticationFilter@43b50027, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@3ef9039c, org.springframework.security.web.servletapi.Secur
+ityContextHolderAwareRequestFilter@3c092eec, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@21ec413c, org.springframework.security.web.session.Sessio
+nManagementFilter@2b9a60d8, org.springframework.security.web.access.ExceptionTranslationFilter@7f15e681, org.springframework.security.web.access.intercept.AuthorizationFilter@6fdc7
+574]
+[25-07-04 20:04:01.187] SquashTM - 7  INFO [main] [] --- org.squashtest.tm.service.RepositoryConfig: init lobHandler
+[25-07-04 20:04:01.189] SquashTM - 7  INFO [main] [] --- org.squashtest.tm.service.RepositoryConfig: init LocalValudatorFactory
+[25-07-04 20:04:01.574] SquashTM - 7  WARN [main] [] --- org.springframework.security.config.annotation.web.builders.WebSecurity: You are asking Spring Security to ignore Ant [patt
+ern='/images/**']. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+[25-07-04 20:04:01.574] SquashTM - 7  INFO [main] [] --- org.springframework.security.web.DefaultSecurityFilterChain: Will not secure Ant [pattern='/images/**']
+[25-07-04 20:04:01.575] SquashTM - 7  WARN [main] [] --- org.springframework.security.config.annotation.web.builders.WebSecurity: You are asking Spring Security to ignore Ant [patt
+ern='/styles/**']. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+[25-07-04 20:04:01.575] SquashTM - 7  INFO [main] [] --- org.springframework.security.web.DefaultSecurityFilterChain: Will not secure Ant [pattern='/styles/**']
+[25-07-04 20:04:01.575] SquashTM - 7  WARN [main] [] --- org.springframework.security.config.annotation.web.builders.WebSecurity: You are asking Spring Security to ignore Ant [patt
+ern='/scripts/**']. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+[25-07-04 20:04:01.575] SquashTM - 7  INFO [main] [] --- org.springframework.security.web.DefaultSecurityFilterChain: Will not secure Ant [pattern='/scripts/**']
+[25-07-04 20:04:01.575] SquashTM - 7  WARN [main] [] --- org.springframework.security.config.annotation.web.builders.WebSecurity: You are asking Spring Security to ignore Ant [patt
+ern='/static/**']. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+[25-07-04 20:04:01.575] SquashTM - 7  INFO [main] [] --- org.springframework.security.web.DefaultSecurityFilterChain: Will not secure Ant [pattern='/static/**']
+[25-07-04 20:04:01.575] SquashTM - 7  WARN [main] [] --- org.springframework.security.config.annotation.web.builders.WebSecurity: You are asking Spring Security to ignore Ant [patt
+ern='/**/favicon.ico']. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+[25-07-04 20:04:01.575] SquashTM - 7  INFO [main] [] --- org.springframework.security.web.DefaultSecurityFilterChain: Will not secure Ant [pattern='/**/favicon.ico']
+[25-07-04 20:04:01.575] SquashTM - 7  WARN [main] [] --- org.springframework.security.config.annotation.web.builders.WebSecurity: You are asking Spring Security to ignore Ant [patt
+ern='/isSquashAlive']. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+[25-07-04 20:04:01.576] SquashTM - 7  INFO [main] [] --- org.springframework.security.web.DefaultSecurityFilterChain: Will not secure Ant [pattern='/isSquashAlive']
+[25-07-04 20:04:01.576] SquashTM - 7  WARN [main] [] --- org.springframework.security.config.annotation.web.builders.WebSecurity: You are asking Spring Security to ignore Ant [patt
+ern='/accessDenied']. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+[25-07-04 20:04:01.576] SquashTM - 7  INFO [main] [] --- org.springframework.security.web.DefaultSecurityFilterChain: Will not secure Ant [pattern='/accessDenied']
+[25-07-04 20:04:01.576] SquashTM - 7  WARN [main] [] --- org.springframework.security.config.annotation.web.builders.WebSecurity: You are asking Spring Security to ignore Ant [patt
+ern='/localization/filler']. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+[25-07-04 20:04:01.576] SquashTM - 7  INFO [main] [] --- org.springframework.security.web.DefaultSecurityFilterChain: Will not secure Ant [pattern='/localization/filler']
+[25-07-04 20:04:01.576] SquashTM - 7  WARN [main] [] --- org.springframework.security.config.annotation.web.builders.WebSecurity: You are asking Spring Security to ignore Ant [patt
+ern='/WEB-INF/**/*.jsp']. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+[25-07-04 20:04:01.576] SquashTM - 7  INFO [main] [] --- org.springframework.security.web.DefaultSecurityFilterChain: Will not secure Ant [pattern='/WEB-INF/**/*.jsp']
+[25-07-04 20:04:01.603] SquashTM - 7  INFO [main] [] --- org.squashtest.tm.core.dynamicmanager.factory.AbstractDynamicComponentFactoryBean: Initializing Dynamic component of type S
+criptedExecutionFinder
+[25-07-04 20:04:01.604] SquashTM - 7  WARN [main] [] --- org.squashtest.tm.core.dynamicmanager.factory.AbstractDynamicComponentFactoryBean: No custom implementation type could be f
+ound in Dynamic component ScriptedExecutionFinder, will not apply custom implementation lookup
+[25-07-04 20:04:01.605] SquashTM - 7  INFO [main] [] --- org.squashtest.tm.core.dynamicmanager.factory.AbstractDynamicComponentFactoryBean: Initializing Dynamic component of type S
+criptedTestCaseFinder
+[25-07-04 20:04:01.605] SquashTM - 7  WARN [main] [] --- org.squashtest.tm.core.dynamicmanager.factory.AbstractDynamicComponentFactoryBean: No custom implementation type could be f
+ound in Dynamic component ScriptedTestCaseFinder, will not apply custom implementation lookup
+[25-07-04 20:04:01.659] SquashTM - 7  WARN [main] [] --- org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration: spring.jpa.open-in-view is enabled
+ by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+[25-07-04 20:04:01.841] SquashTM - 7  INFO [main] [] --- org.springframework.boot.autoconfigure.web.servlet.WelcomePageHandlerMapping: Adding welcome page: class path resource [MET
+A-INF/resources/index.html]
+[25-07-04 20:04:02.795] SquashTM - 7  WARN [main] [] --- org.springframework.boot.autoconfigure.thymeleaf.ThymeleafAutoConfiguration$DefaultTemplateResolverConfiguration: Cannot fi
+nd template location: /WEB-INF/templates/ (please add some templates, check your Thymeleaf configuration, or set spring.thymeleaf.check-template-location=false)
+[25-07-04 20:04:02.821] SquashTM - 7  INFO [main] [] --- org.springframework.boot.actuate.endpoint.web.EndpointLinksResolver: Exposing 0 endpoint(s) beneath base path '/actuator'  
+[25-07-04 20:04:02.990] SquashTM - 7  INFO [main] [] --- org.springframework.boot.web.embedded.tomcat.TomcatWebServer: Tomcat started on port(s): 8080 (http) with context path '/sq
+uash'
+[25-07-04 20:04:02.993] SquashTM - 7  INFO [main] [] --- org.squashtest.tm.web.backend.listener.SquashConfigContextExposer: Read global configuration param 'feature.milestone.enabl
+ed' with param 'false'
+[25-07-04 20:04:03.017] SquashTM - 7  INFO [main] [] --- org.squashtest.tm.SquashTm: Started SquashTm in 51.068 seconds (JVM running for 52.68)
+[25-07-04 20:04:03.026] SquashTM - 7  INFO [main] [] --- org.squashtest.tm.PluginValidationPreProcessor: About to reset plugin license validation information.
+[25-07-04 20:04:03.128] SquashTM - 7  INFO [main] [] --- org.squashtest.tm.web.backend.manager.synchronisation.SynchronisationPluginManagerImpl: Found the property 'squash.external
+.synchronisation.delay'. Delay between sync will be  : 300 seconds.
+[25-07-04 20:04:03.174] SquashTM - 7  INFO [main] [] --- org.squashtest.tm.web.backend.manager.synchronisation.SynchronisationPluginManagerImpl: Registering synchronisation plugin 
+org.squashtest.tm.plugin.jirasync.JIRASyncPlugin@7c5fda87 as Xsquash4Jira
+[25-07-04 20:04:03.175] SquashTM - 7  INFO [squashtest.tm.service.ThreadPoolTaskScheduler-1] [] --- org.squashtest.tm.plugin.jirasync.service.RequirementSynchronizationService: [JI
+RA-SYNC] - Begin Synchronisation with JIRA.
+PS C:\Users\kal-e> ^C
+PS C:\Users\kal-e>
