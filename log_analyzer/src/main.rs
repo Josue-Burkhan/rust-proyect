@@ -1,56 +1,30 @@
-use clap::Parser;
-use std::fs::File;
-use std::io::{self, BufRead};
+#![cfg_attr(not(debug_assertions), windows_subsystem = "windows")]
 
-
-mod cli;
 mod model;
 mod parser;
 
-// Import the necessary items from our modules into the current scope.
-use cli::{Cli, Commands};
 use parser::parse_line;
+use std::fs::File;
+use std::io::{self, BufRead};
 
-fn main() {
-    // Parse the command-line arguments using the structure defined in `cli.rs`.
-    let cli_args = Cli::parse();
+#[tauri::command]
+fn analyze_log_file(path: String) -> Result<Vec<String>, String> {
+    let file = File::open(&path).map_err(|e| e.to_string())?;
+    let reader = io::BufReader::new(file);
+    let mut parsed_entries = Vec::new();
 
-    // Handle the subcommand provided by the user.
-    match &cli_args.command {
-        Commands::Analyze { file } => {
-            println!("Analyzing file: {}", file);
-            if let Err(e) = process_log_file(file) {
-                eprintln!("Error processing file: {}", e);
-            }
-        }
+    for line in reader.lines() {
+        let content = line.map_err(|e| e.to_string())?;
+        let log_entry = parse_line(&content);
+        parsed_entries.push(log_entry.to_string());
     }
+
+    Ok(parsed_entries)
 }
 
-// This function contains the logic for processing the log file.
-fn process_log_file(path: &str) -> io::Result<()> {
-    // Open the file in read-only mode.
-    let file = File::open(path)?;
-
-    // Create a buffered reader for efficiency. It reads the file line by line
-    // instead of loading the whole file into memory.
-    let reader = io::BufReader::new(file);
-
-    // Iterate over each line in the file.
-    for line in reader.lines() {
-        // The `line` is a `Result`, so we handle potential errors.
-        match line {
-            Ok(content) => {
-                // If the line is read successfully, parse it.
-                let log_entry = parse_line(&content);
-                // Print the structured log entry to the console.
-                // This will use the `Display` implementation we wrote in `model.rs`.
-                println!("{}", log_entry);
-            }
-            Err(e) => {
-                eprintln!("Error reading a line: {}", e);
-            }
-        }
-    }
-
-    Ok(())
+fn main() {
+    tauri::Builder::default()
+        .invoke_handler(tauri::generate_handler![analyze_log_file])
+        .run(tauri::generate_context!())
+        .expect("error while running tauri application");
 }
