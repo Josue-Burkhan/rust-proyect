@@ -8,7 +8,7 @@ This project serves as a practical exercise in learning Rust, focusing on its pe
 
 My purpose for creating this software is to build a robust, real-world utility that streamlines my development workflow. It's a challenge to handle data parsing, real-time processing, and user-friendly CLI design, and a perfect opportunity to apply and expand my software engineering skills.
 
-[Software Demo Video](http://youtube.link.goes.here)
+[Software Demo Video](https://youtu.be/XIPhGC-cGDU)
 
 ## Development Environment
 
@@ -18,13 +18,19 @@ This software was developed in a Windows environment using the following tools:
 * **Build Tool & Package Manager:** Cargo (the official Rust package manager)
 * **Compiler Toolchain:** The project relies on the MSVC (Microsoft Visual C++) toolchain, installed via the **Build Tools for Visual Studio 2022**, which provides the necessary linker (`link.exe`).
 
-The primary programming language used is **Rust**. Rust was chosen for its strong performance, memory safety guarantees, and excellent ecosystem for building efficient and reliable command-line tools. Key libraries (crates) used include `clap` for parsing command-line arguments, `colored` for terminal output styling, and `regex` for pattern matching in log entries.
+The primary programming language used is **Rust**. Rust was chosen for its strong performance, memory safety, and modern tooling, making it an excellent choice for building reliable and efficient desktop applications. Key libraries (crates) used include:
+
+* **`iced`**: A cross-platform GUI library used to build the entire graphical user interface.
+* **`regex`**: For advanced pattern matching to detect specific log formats, like HTTP error codes.
+* **`lazy_static`**: To ensure regular expressions are compiled only once for better performance.
+
+---
 
 ## Useful Websites
 
 Here is a list of websites that were helpful during the development of this project:
 
-* [The Rust Programming Language Book](https://doc.rust-lang.org/book/ch01-02-hello-world.html)
-* [Clap (CLI Argument Parser) Crate Documentation](https://docs.rs/clap/latest/clap/)
+* [The Rust Programming Language Book](https://doc.rust-lang.org/book/)
+* [Iced (GUI Library) Crate Documentation](https://docs.rs/iced/latest/iced/)
 * [Regex Crate Documentation](https://docs.rs/regex/latest/regex/)
-* [Colored Crate Documentation](https://docs.rs/colored/latest/colored/)
+* [Lazy Static Crate Documentation](https://docs.rs/lazy_static/latest/lazy_static/)
