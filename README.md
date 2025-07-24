@@ -8,7 +8,7 @@ This project serves as a practical exercise in learning Rust, focusing on its pe
 
 My purpose for creating this software is to build a robust, real-world utility that streamlines my development workflow. It's a challenge to handle data parsing, real-time processing, and user-friendly CLI design, and a perfect opportunity to apply and expand my software engineering skills.
 
-[Software Demo Video](http://youtube.link.goes.here)
+[Software Demo Video](https://youtu.be/XIPhGC-cGDU)
 
 ## Development Environment
 
